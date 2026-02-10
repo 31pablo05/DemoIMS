@@ -1,0 +1,134 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WhatsAppButton from '../components/WhatsAppButton';
+---
+
+<Layout 
+  title="Servicios Médicos"
+  description="Servicios médicos integrales: Guardia 24hs, Ginecología, Neonatología, Diagnóstico por Imágenes, Internación y más en Instituto Médico del Sur, Trelew."
+>
+  <Hero 
+    title="Nuestros Servicios"
+    subtitle="Atención médica integral con tecnología de vanguardia"
+    variant="secondary"
+  />
+
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <!-- Guardia y Emergencias -->
+      <div class="mb-16">
+        <h2 class="section-title text-center">Guardia y Emergencias</h2>
+        <div class="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+          <ServiceCard 
+            title="Guardia Médica 24 Horas"
+            description="Atención de urgencias y emergencias médicas las 24 horas del día, los 365 días del año. Contamos con equipo médico de guardia permanente, equipamiento de última generación y ambulancia para traslados."
+            icon="🚨"
+            link="/horarios"
+          />
+        </div>
+      </div>
+
+      <!-- Especialidades Médicas -->
+      <div class="mb-16">
+        <h2 class="section-title text-center">Especialidades Médicas</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ServiceCard 
+            title="Ginecología y Obstetricia"
+            description="Atención integral de la salud de la mujer: controles ginecológicos, control prenatal, ecografías obstétricas, parto y puerperio. Profesionales con amplia experiencia."
+            icon="👶"
+            whatsapp="2804666745"
+          />
+          
+          <ServiceCard 
+            title="Neonatología"
+            description="Cuidado especializado de recién nacidos sanos y prematuros. Sala de neonatología equipada con incubadoras, monitores y tecnología de punta para el cuidado del bebé."
+            icon="🍼"
+          />
+          
+          <ServiceCard 
+            title="Consultorio Externo"
+            description="Consultas ambulatorias con profesionales en diversas especialidades médicas. Atención personalizada y seguimiento continuo de pacientes."
+            icon="⚕️"
+            link="/profesionales"
+          />
+        </div>
+      </div>
+
+      <!-- Diagnóstico por Imágenes -->
+      <div class="mb-16">
+        <h2 class="section-title text-center">Diagnóstico por Imágenes</h2>
+        <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+          Equipamiento de última generación para estudios de diagnóstico con informes elaborados por profesionales especializados.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <ServiceCard 
+            title="Radiología Digital"
+            description="Estudios radiológicos digitales con menor radiación y mayor precisión diagnóstica. Resultados en el día."
+            icon="📡"
+          />
+          
+          <ServiceCard 
+            title="Ecografía"
+            description="Ecografías generales, obstétricas, ginecológicas y de partes blandas. Coordinación previa por WhatsApp. Atención de lunes a viernes de 8 a 20hs."
+            icon="🔬"
+            whatsapp="2804692909"
+          />
+          
+          <ServiceCard 
+            title="Resonador Abierto"
+            description="Resonancia magnética de última generación con diseño abierto, ideal para pacientes claustrofóbicos. Mayor comodidad y precisión diagnóstica."
+            icon="🧲"
+          />
+          
+          <ServiceCard 
+            title="Densitometría Ósea"
+            description="Estudio que mide la densidad mineral ósea para diagnosticar osteoporosis y evaluar el riesgo de fracturas. Fundamental para prevención en adultos mayores."
+            icon="🦴"
+          />
+        </div>
+      </div>
+
+      <!-- Internación -->
+      <div class="mb-16">
+        <h2 class="section-title text-center">Internación</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <ServiceCard 
+            title="Internación Clínica"
+            description="Salas de internación equipadas con monitoreo continuo, enfermería especializada las 24 horas y comodidades para el paciente y acompañante."
+            icon="🏥"
+          />
+          
+          <ServiceCard 
+            title="Internación Quirúrgica"
+            description="Quirófanos modernos equipados con tecnología de vanguardia para cirugías de mediana y alta complejidad. Equipo quirúrgico altamente capacitado."
+            icon="🏥"
+          />
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-12 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">¿Necesitas más información?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Contactanos para consultar disponibilidad, solicitar turnos o resolver tus dudas
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/turnos" class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl">
+            📋 Solicitar Turno
+          </a>
+          <a href="tel:2804421121" class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-4 px-8 rounded-lg transition-all duration-300">
+            📞 280 4421121
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <WhatsAppButton 
+    client:load
+    phone="2804421121"
+    message="Hola, quisiera consultar sobre los servicios médicos disponibles."
+  />
+</Layout>

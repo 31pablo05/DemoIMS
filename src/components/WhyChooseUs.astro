@@ -1,0 +1,83 @@
+---
+const valores = [
+  {
+    icono: '🏆',
+    titulo: 'Excelencia Médica',
+    descripcion: 'Profesionales altamente capacitados y en constante actualización'
+  },
+  {
+    icono: '💎',
+    titulo: 'Tecnología de Punta',
+    descripcion: 'Equipamiento de última generación para diagnósticos precisos'
+  },
+  {
+    icono: '❤️',
+    titulo: 'Atención Humanizada',
+    descripcion: 'Trato cálido y personalizado para cada paciente'
+  },
+  {
+    icono: '⚡',
+    titulo: 'Respuesta Inmediata',
+    descripcion: 'Guardia médica 24/7 los 365 días del año'
+  },
+  {
+    icono: '🔒',
+    titulo: 'Confidencialidad',
+    descripcion: 'Máxima privacidad y seguridad de tus datos médicos'
+  },
+  {
+    icono: '🌟',
+    titulo: 'Trayectoria Comprobada',
+    descripcion: 'Más de 30 años cuidando la salud de la comunidad'
+  }
+];
+---
+
+<section class="py-20 relative overflow-hidden">
+  <!-- Decorative background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">¿Por qué elegirnos?</span>
+      <h2 class="section-title">Tu Salud, Nuestra Prioridad</h2>
+      <p class="section-subtitle max-w-2xl mx-auto">
+        Comprometidos con brindarte la mejor atención médica integral
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {valores.map((valor, index) => (
+        <div 
+          class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/30 hover:-translate-y-2"
+          style={`animation: fadeInUp 0.6s ease-out ${index * 0.1}s both`}
+        >
+          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            {valor.icono}
+          </div>
+          <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
+            {valor.titulo}
+          </h3>
+          <p class="text-gray-600 leading-relaxed">
+            {valor.descripcion}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

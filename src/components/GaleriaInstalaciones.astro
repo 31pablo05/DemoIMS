@@ -1,0 +1,72 @@
+---
+const instalaciones = [
+  {
+    titulo: 'Consultorios Modernos',
+    imagen: '/imagenes/clinica/frenteims.jpg',
+    descripcion: 'Espacios cómodos y equipados'
+  },
+  {
+    titulo: 'Tecnología Avanzada',
+    imagen: '/imagenes/clinica/frenteims.jpg',
+    descripcion: 'Equipamiento de última generación'
+  },
+  {
+    titulo: 'Salas de Espera',
+    imagen: '/imagenes/clinica/frenteims.jpg',
+    descripcion: 'Ambientes confortables'
+  },
+  {
+    titulo: 'Quirófanos',
+    imagen: '/imagenes/clinica/frenteims.jpg',
+    descripcion: 'Cirugías con precisión'
+  }
+];
+---
+
+<section class="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <span class="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">Instalaciones</span>
+      <h2 class="section-title">Nuestras Instalaciones</h2>
+      <p class="section-subtitle max-w-2xl mx-auto">
+        Espacios diseñados pensando en tu comodidad y equipados con tecnología de vanguardia
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {instalaciones.map((instalacion, index) => (
+        <div 
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-80"
+          style={`animation: fadeInUp 0.6s ease-out ${index * 0.1}s both`}
+        >
+          <img 
+            src={instalacion.imagen}
+            alt={instalacion.titulo}
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <h3 class="text-xl font-bold mb-2">{instalacion.titulo}</h3>
+            <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {instalacion.descripcion}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
