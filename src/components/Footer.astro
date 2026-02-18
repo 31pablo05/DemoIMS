@@ -2,131 +2,444 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="relative bg-gradient-to-br from-dark via-accent to-dark text-white overflow-hidden">
-  <!-- Decorative elements -->
-  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
-  
-  <div class="container mx-auto px-4 py-16 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-      <!-- Información Institucional -->
-      <div class="space-y-6">
-        <div class="flex items-center space-x-3">
-          <img 
-            src="/imagenes/logo/logo2.svg" 
-            alt="Instituto Médico del Sur" 
-            class="footer-logo h-8 w-8 object-contain brightness-0 invert"
-          />
+<footer class="ft-root">
+  <!-- top accent line -->
+  <div class="ft-accent-bar"></div>
+
+  <div class="ft-inner">
+
+    <!-- ── MAIN GRID ── -->
+    <div class="ft-grid">
+
+      <!-- Col 1 · Brand -->
+      <div class="ft-brand">
+        <div class="ft-logo-row">
+          <img src="/imagenes/logo/logo2.svg" alt="Instituto Médico del Sur" class="ft-logo" />
+          <div>
+            <p class="ft-brand-name">Instituto Médico del Sur</p>
+            <p class="ft-brand-sub">Trelew · Chubut</p>
+          </div>
         </div>
-        <h3 class="text-xl font-bold gradient-text-light">Instituto Médico del Sur</h3>
-        <p class="text-gray-300 leading-relaxed">
-          Centro médico integral en Trelew comprometido con la salud de la comunidad desde hace más de 30 años.
-        </p>
-        <div class="flex items-center space-x-4">
-          <a href="https://www.facebook.com/InstitutoMedicoDelSur" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Facebook">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
+        <p class="ft-desc">Centro médico integral comprometido con la salud de la comunidad desde hace más de 30 años.</p>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/InstitutoMedicoDelSur" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="https://www.instagram.com/institutomedicodelsur" target="_blank" rel="noopener" class="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Instagram">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
-            </svg>
+          <a href="https://www.instagram.com/institutomedicodelsur" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
           </a>
         </div>
       </div>
 
-      <!-- Contacto -->
-      <div class="space-y-6">
-        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-          <span class="text-2xl">📞</span>
-          Contacto
-        </h3>
-        <div class="space-y-4 text-gray-300">
-          <div class="flex items-start space-x-3 group">
-            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-              </svg>
-            </div>
+      <!-- Col 2 · Navigation -->
+      <div class="ft-col">
+        <p class="ft-col-title">Navegación</p>
+        <nav class="ft-nav">
+          <a href="/" class="ft-nav-link">
+            <span class="ft-nav-dot"></span>Inicio
+          </a>
+          <a href="/servicios" class="ft-nav-link">
+            <span class="ft-nav-dot"></span>Servicios
+          </a>
+          <a href="/profesionales" class="ft-nav-link">
+            <span class="ft-nav-dot"></span>Profesionales
+          </a>
+          <a href="/horarios" class="ft-nav-link">
+            <span class="ft-nav-dot"></span>Horarios
+          </a>
+          <a href="/turnos" class="ft-nav-link">
+            <span class="ft-nav-dot"></span>Turnos
+          </a>
+        </nav>
+      </div>
+
+      <!-- Col 3 · Contact -->
+      <div class="ft-col">
+        <p class="ft-col-title">Contacto</p>
+        <ul class="ft-contact-list">
+          <li class="ft-contact-item">
+            <span class="ft-contact-icon">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span>Moreno 333, Trelew, Chubut</span>
+          </li>
+          <li class="ft-contact-item">
+            <span class="ft-contact-icon">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.02 3.12 2 2 0 012 .93h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <a href="tel:2804421121" class="ft-contact-link">280 4421121</a>
+          </li>
+          <li class="ft-contact-item">
+            <span class="ft-contact-icon ft-contact-icon--wa">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </span>
+            <span>
+              Gine: <a href="https://wa.me/5492804666745" class="ft-contact-link ft-contact-link--wa">280 4666745</a>
+              <br/>Eco: <a href="https://wa.me/5492804692909" class="ft-contact-link ft-contact-link--wa">280 4692909</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4 · Hours -->
+      <div class="ft-col">
+        <p class="ft-col-title">Horarios</p>
+        <div class="ft-hours">
+          <div class="ft-guardia-badge">
+            <span class="ft-guardia-pulse"></span>
             <div>
-              <p class="font-semibold text-white">Dirección</p>
-              <p>Moreno 333, Trelew, Chubut</p>
+              <p class="ft-guardia-label">Guardia Médica</p>
+              <p class="ft-guardia-time">24 hs · 365 días</p>
             </div>
           </div>
-          <div class="flex items-start space-x-3 group">
-            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
+          <div class="ft-schedule">
+            <div class="ft-schedule-row">
+              <span class="ft-schedule-day">Lun – Vie</span>
+              <span class="ft-schedule-time">8:00 – 20:00</span>
             </div>
-            <div>
-              <p class="font-semibold text-white">Teléfono General</p>
-              <a href="tel:2804421121" class="hover:text-primary transition-colors text-lg font-bold">280 4421121</a>
-            </div>
-          </div>
-          <div class="flex items-start space-x-3 group">
-            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-            </div>
-            <div>
-              <p class="font-semibold text-white mb-2">WhatsApp Turnos</p>
-              <p class="text-sm">Gine: <a href="https://wa.me/5492804666745" class="hover:text-green-400 transition-colors font-semibold">280 4666745</a></p>
-              <p class="text-sm">Eco: <a href="https://wa.me/5492804692909" class="hover:text-green-400 transition-colors font-semibold">280 4692909</a></p>
+            <div class="ft-schedule-row">
+              <span class="ft-schedule-day">Sábados</span>
+              <span class="ft-schedule-time">9:00 – 12:00</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Horarios de Guardia -->
-      <div class="space-y-6">
-        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-          <span class="text-2xl">🚨</span>
-          Horarios
-        </h3>
-        <div class="space-y-4">
-          <div class="bg-red-500/20 backdrop-blur-sm border border-red-500/30 p-6 rounded-2xl hover:bg-red-500/30 transition-all duration-300">
-            <p class="font-bold text-white text-lg mb-2">Guardia Médica</p>
-            <p class="text-3xl font-bold text-white mb-1">24 horas</p>
-            <p class="text-sm text-gray-300">Todos los días del año</p>
-          </div>
-          <div class="space-y-2">
-            <div class="bg-white/5 backdrop-blur-sm p-4 rounded-xl">
-              <p class="font-semibold text-white mb-1">Consultorios</p>
-              <p class="text-sm text-gray-300">Lun a Vie: 8:00 a 20:00</p>
-              <p class="text-sm text-gray-300">Sáb: 9:00 a 12:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div><!-- /ft-grid -->
+
+    <!-- ── BOTTOM BAR ── -->
+    <div class="ft-bottom">
+      <p class="ft-copy">&copy; {currentYear} Instituto Médico del Sur. Todos los derechos reservados.</p>
+      <a href="/turnos" class="ft-turno-cta">Pedir turno</a>
     </div>
 
-    <div class="border-t border-white/10 pt-8 text-center">
-      <p class="text-gray-400">&copy; {currentYear} Instituto Médico del Sur. Todos los derechos reservados.</p>
-      <p class="text-sm text-gray-500 mt-2">Moreno 333, Trelew, Chubut, Argentina</p>
-    </div>
-  </div>
+  </div><!-- /ft-inner -->
 </footer>
 
 <style>
-  /* Logo específico para footer */
-  .footer-logo {
-    width: 32px !important;
-    height: 32px !important;
-    max-width: 32px !important;
-    max-height: 32px !important;
-    min-width: 32px !important;
-    min-height: 32px !important;
+  .ft-root {
+    background: #001e36;
+    color: #c8d8e8;
+    font-family: 'Inter', system-ui, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtle radial glow */
+  .ft-root::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 5% 110%, rgba(0,116,183,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 95% -10%, rgba(0,168,225,0.08) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  /* top accent line */
+  .ft-accent-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #0074B7 0%, #00A8E1 50%, #0074B7 100%);
+    background-size: 200% 100%;
+    animation: shimmer-ft 4s linear infinite;
+  }
+  @keyframes shimmer-ft {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .ft-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── GRID ── */
+  .ft-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.2fr 1.2fr;
+    gap: 40px 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ── BRAND COL ── */
+  .ft-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .ft-logo {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(0,168,225,0.4));
     flex-shrink: 0;
   }
-  
-  .gradient-text-light {
-    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .ft-brand-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .ft-brand-sub {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #00A8E1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .ft-desc {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: rgba(200,216,232,0.75);
+    margin-bottom: 20px;
+    max-width: 260px;
+  }
+  .ft-social {
+    display: flex;
+    gap: 10px;
+  }
+  .ft-social-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(200,216,232,0.7);
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+  .ft-social-btn:hover {
+    background: rgba(0,116,183,0.25);
+    border-color: #0074B7;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* ── GENERIC COL ── */
+  .ft-col-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #00A8E1;
+    margin-bottom: 16px;
+  }
+
+  /* ── NAV ── */
+  .ft-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .ft-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: rgba(200,216,232,0.75);
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+  }
+  .ft-nav-link:hover {
+    color: #fff;
+    gap: 12px;
+  }
+  .ft-nav-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0074B7;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .ft-nav-link:hover .ft-nav-dot {
+    background: #00A8E1;
+    transform: scale(1.4);
+  }
+
+  /* ── CONTACT ── */
+  .ft-contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ft-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: rgba(200,216,232,0.75);
+    line-height: 1.5;
+  }
+  .ft-contact-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: rgba(0,116,183,0.18);
+    border: 1px solid rgba(0,116,183,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #00A8E1;
+    margin-top: 1px;
+  }
+  .ft-contact-icon--wa {
+    background: rgba(37,211,102,0.12);
+    border-color: rgba(37,211,102,0.25);
+    color: #25d366;
+  }
+  .ft-contact-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .ft-contact-link:hover { color: #00A8E1; }
+  .ft-contact-link--wa { color: #a8f0c0; }
+  .ft-contact-link--wa:hover { color: #25d366; }
+
+  /* ── HOURS ── */
+  .ft-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .ft-guardia-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(220,38,38,0.12);
+    border: 1px solid rgba(220,38,38,0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .ft-guardia-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f87171;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .ft-guardia-pulse::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #f87171;
+    animation: pulse-ft 1.6s ease-out infinite;
+  }
+  @keyframes pulse-ft {
+    0%   { opacity: 0.8; transform: scale(0.7); }
+    100% { opacity: 0;   transform: scale(1.9); }
+  }
+  .ft-guardia-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fca5a5;
+    letter-spacing: 0.04em;
+  }
+  .ft-guardia-time {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-top: 1px;
+  }
+  .ft-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ft-schedule-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.8rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ft-schedule-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .ft-schedule-day {
+    color: rgba(200,216,232,0.65);
+    font-weight: 500;
+  }
+  .ft-schedule-time {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── BOTTOM BAR ── */
+  .ft-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0 20px;
+  }
+  .ft-copy {
+    font-size: 0.76rem;
+    color: rgba(200,216,232,0.4);
+  }
+  .ft-turno-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(135deg, #0074B7, #00A8E1);
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+  .ft-turno-cta:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .ft-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 24px;
+    }
+    .ft-brand { grid-column: 1 / -1; }
+    .ft-desc { max-width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .ft-inner { padding: 36px 20px 0; }
+    .ft-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+    }
+    .ft-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .ft-turno-cta { align-self: stretch; justify-content: center; }
   }
 </style>

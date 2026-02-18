@@ -1,83 +1,457 @@
 ---
 const valores = [
   {
-    icono: '🏆',
     titulo: 'Excelencia Médica',
-    descripcion: 'Profesionales altamente capacitados y en constante actualización'
+    descripcion: 'Profesionales altamente capacitados y en constante actualización científica.',
+    detalle: 'Formación continua · Protocolos internacionales',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 6l5.09 10.26L42 17.82l-8 7.8 1.89 11-9.89-5.2-9.89 5.2L18 25.62l-8-7.8 10.91-1.56L26 6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>`
   },
   {
-    icono: '💎',
     titulo: 'Tecnología de Punta',
-    descripcion: 'Equipamiento de última generación para diagnósticos precisos'
+    descripcion: 'Equipamiento de última generación para diagnósticos rápidos y precisos.',
+    detalle: 'Diagnóstico digital · Imágenes HD',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="12" width="36" height="24" rx="3" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M18 36v4M34 36v4M14 40h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M16 24h4l3-6 4 12 3-8 3 5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`
   },
   {
-    icono: '❤️',
     titulo: 'Atención Humanizada',
-    descripcion: 'Trato cálido y personalizado para cada paciente'
+    descripcion: 'Trato cálido y personalizado. Cada paciente es único para nosotros.',
+    detalle: 'Escucha activa · Acompañamiento integral',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 42s-18-11-18-23a11 11 0 0118-8.49A11 11 0 0144 19c0 12-18 23-18 23z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 22v8M22 26h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>`
   },
   {
-    icono: '⚡',
     titulo: 'Respuesta Inmediata',
-    descripcion: 'Guardia médica 24/7 los 365 días del año'
+    descripcion: 'Guardia médica activa las 24 horas, los 365 días del año.',
+    detalle: '24/7 · Sin demoras · Urgencias',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="26" cy="26" r="18" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M26 14v13l8 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 8l4 4M38 8l-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>`
   },
   {
-    icono: '🔒',
     titulo: 'Confidencialidad',
-    descripcion: 'Máxima privacidad y seguridad de tus datos médicos'
+    descripcion: 'Máxima privacidad y seguridad en el manejo de tus datos médicos.',
+    detalle: 'Datos encriptados · Normas HIPAA',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M26 6L10 13v12c0 10.5 6.9 20.3 16 23 9.1-2.7 16-12.5 16-23V13L26 6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M20 26l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`
   },
   {
-    icono: '🌟',
     titulo: 'Trayectoria Comprobada',
-    descripcion: 'Más de 30 años cuidando la salud de la comunidad'
+    descripcion: 'Más de 30 años siendo referente de salud en nuestra comunidad.',
+    detalle: 'Desde 1994 · Miles de historias',
+    icon: `<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 42V22l16-14 16 14v20" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <rect x="20" y="30" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M26 30v12" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M20 36h12" stroke="currentColor" stroke-width="1.8"/>
+    </svg>`
   }
 ];
 ---
 
-<section class="py-20 relative overflow-hidden">
-  <!-- Decorative background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50"></div>
-  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+<section class="valores-section" aria-labelledby="valores-heading">
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <span class="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">¿Por qué elegirnos?</span>
-      <h2 class="section-title">Tu Salud, Nuestra Prioridad</h2>
-      <p class="section-subtitle max-w-2xl mx-auto">
-        Comprometidos con brindarte la mejor atención médica integral
+  <!-- Fondo con textura sutil -->
+  <div class="vbg" aria-hidden="true">
+    <div class="vbg-noise"></div>
+    <div class="vbg-grad1"></div>
+    <div class="vbg-grad2"></div>
+    <div class="vbg-lines"></div>
+  </div>
+
+  <div class="valores-inner">
+
+    <!-- HEADER -->
+    <header class="valores-header" data-vanimate>
+      <div class="v-eyebrow">
+        <span class="v-eyebrow-line"></span>
+        ¿Por qué elegirnos?
+        <span class="v-eyebrow-line"></span>
+      </div>
+      <h2 id="valores-heading" class="v-title">
+        Tu salud merece<br/><em>lo mejor</em>
+      </h2>
+      <p class="v-subtitle">
+        Cada decisión que tomamos está guiada por un único objetivo: tu bienestar.
       </p>
-    </div>
+    </header>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {valores.map((valor, index) => (
-        <div 
-          class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary/30 hover:-translate-y-2"
-          style={`animation: fadeInUp 0.6s ease-out ${index * 0.1}s both`}
+    <!-- GRID -->
+    <div class="valores-grid">
+      {valores.map((v, i) => (
+        <article
+          class="vcard"
+          data-vanimate
+          data-vi={i}
+          style={`--vd: ${i * 90}ms`}
         >
-          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-            {valor.icono}
+          <div class="vcard-inner">
+            <!-- número de orden -->
+            <div class="vcard-num">0{i + 1}</div>
+
+            <!-- icono -->
+            <div class="vcard-icon" set:html={v.icon} />
+
+            <!-- contenido -->
+            <h3 class="vcard-title">{v.titulo}</h3>
+            <p class="vcard-desc">{v.descripcion}</p>
+
+            <!-- detalle pill -->
+            <div class="vcard-pill">{v.detalle}</div>
+
+            <!-- línea decorativa inferior -->
+            <div class="vcard-rule"></div>
           </div>
-          <h3 class="text-xl font-bold text-dark mb-3 group-hover:text-primary transition-colors">
-            {valor.titulo}
-          </h3>
-          <p class="text-gray-600 leading-relaxed">
-            {valor.descripcion}
-          </p>
-        </div>
+
+          <!-- brillo hover -->
+          <div class="vcard-sheen" aria-hidden="true"></div>
+        </article>
       ))}
     </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="valores-strip" data-vanimate>
+      <div class="strip-left">
+        <div class="strip-pulse"></div>
+        <span>Guardia activa ahora mismo</span>
+      </div>
+      <a href="/turnos" class="strip-cta">
+        Solicitar turno
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
   </div>
 </section>
 
 <style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* ── SECTION ── */
+  .valores-section {
+    position: relative;
+    padding: 120px 5% 100px;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f7f9fc;
+  }
+
+  /* ── BACKGROUND ── */
+  .vbg { position: absolute; inset: 0; pointer-events: none; }
+
+  .vbg-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    mix-blend-mode: multiply;
+  }
+  .vbg-grad1 {
+    position: absolute;
+    top: -120px; right: -100px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,116,183,0.07) 0%, transparent 70%);
+  }
+  .vbg-grad2 {
+    position: absolute;
+    bottom: -80px; left: -60px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,168,225,0.07) 0%, transparent 70%);
+  }
+  .vbg-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(0,116,183,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,116,183,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ── INNER ── */
+  .valores-inner {
+    position: relative;
+    z-index: 5;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .valores-header {
+    text-align: center;
+    margin-bottom: 72px;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .valores-header.vvisible { opacity: 1; transform: translateY(0); }
+
+  .v-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #0074B7;
+    margin-bottom: 22px;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .v-eyebrow-line {
+    display: block;
+    width: 32px; height: 1px;
+    background: #0074B7;
+    opacity: 0.4;
+  }
+
+  .v-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+    font-weight: 800;
+    color: #003554;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0 0 20px;
+  }
+  .v-title em {
+    font-style: normal;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0074B7 0%, #00A8E1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .v-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #64748b;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  /* ── GRID ── */
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  /* ── CARD ── */
+  .vcard {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(0,116,183,0.08);
+    box-shadow: 0 2px 16px rgba(0,53,84,0.05), 0 1px 3px rgba(0,53,84,0.04);
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.65s ease var(--vd, 0ms),
+      transform 0.65s ease var(--vd, 0ms),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+    cursor: default;
+  }
+  .vcard.vvisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .vcard:hover {
+    box-shadow: 0 20px 50px rgba(0,116,183,0.12), 0 4px 16px rgba(0,53,84,0.06);
+    border-color: rgba(0,116,183,0.20);
+    transform: translateY(-4px) !important;
+  }
+
+  /* sheen */
+  .vcard-sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-100%) skewX(-15deg);
+    transition: transform 0s;
+    pointer-events: none;
+  }
+  .vcard:hover .vcard-sheen {
+    transform: translateX(200%) skewX(-15deg);
+    transition: transform 0.7s ease;
+  }
+
+  .vcard-inner {
+    padding: 40px 36px 36px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* order number */
+  .vcard-num {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: rgba(0,116,183,0.28);
+    margin-bottom: 24px;
+  }
+
+  /* icon */
+  .vcard-icon {
+    width: 44px; height: 44px;
+    color: #0074B7;
+    margin-bottom: 24px;
+    transition: transform 0.35s ease, color 0.3s;
+  }
+  .vcard-icon svg { width: 100%; height: 100%; }
+  .vcard:hover .vcard-icon {
+    transform: translateY(-4px) scale(1.05);
+    color: #005A8C;
+  }
+
+  /* title */
+  .vcard-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #003554;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    transition: color 0.3s;
+  }
+  .vcard:hover .vcard-title { color: #0074B7; }
+
+  /* desc */
+  .vcard-desc {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0 0 20px;
+  }
+
+  /* pill */
+  .vcard-pill {
+    display: inline-block;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: #0074B7;
+    background: rgba(0,116,183,0.07);
+    border: 1px solid rgba(0,116,183,0.14);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  /* rule */
+  .vcard-rule {
+    position: absolute;
+    bottom: 0; left: 36px; right: 36px;
+    height: 2px;
+    background: linear-gradient(90deg, #0074B7, #00A8E1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    border-radius: 2px;
+  }
+  .vcard:hover .vcard-rule { transform: scaleX(1); }
+
+  /* ── BOTTOM STRIP ── */
+  .valores-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #003554;
+    border-radius: 12px;
+    padding: 22px 36px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
+  }
+  .valores-strip.vvisible { opacity: 1; transform: translateY(0); }
+
+  .strip-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.78);
+  }
+  .strip-pulse {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #4cde80;
+    box-shadow: 0 0 0 0 rgba(76,222,128,0.5);
+    animation: vstrip-pulse 2s ease-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes vstrip-pulse {
+    0%   { box-shadow: 0 0 0 0   rgba(76,222,128,0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(76,222,128,0); }
+    100% { box-shadow: 0 0 0 0   rgba(76,222,128,0); }
+  }
+
+  .strip-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #0074B7, #00A8E1);
+    color: #fff;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 13px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0,116,183,0.35);
+  }
+  .strip-cta:hover {
+    background: linear-gradient(135deg, #005A8C, #0074B7);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,116,183,0.45);
+  }
+  .strip-cta svg { transition: transform 0.25s; }
+  .strip-cta:hover svg { transform: translateX(4px); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .valores-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .valores-section { padding: 80px 5% 70px; }
+    .valores-grid { grid-template-columns: 1fr; gap: 16px; }
+    .valores-strip { flex-direction: column; gap: 20px; text-align: center; }
+    .vcard-inner { padding: 32px 28px 28px; }
   }
 </style>
+
+<script>
+  const vEls = document.querySelectorAll('[data-vanimate]');
+  const vObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('vvisible');
+        vObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  vEls.forEach(el => vObs.observe(el));
+</script>

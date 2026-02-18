@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @theme {
   --color-primary: #0074B7;
@@ -8,7 +9,19 @@
   --color-textDark: #1a1a1a;
   --color-light: #ffffff;
   
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --text-label:   0.6875rem;  /* 11px – eyebrows, badges */
+  --text-sm:      0.875rem;   /* 14px – captions, pills */
+  --text-base:    1rem;       /* 16px – body */
+  --text-lg:      1.125rem;   /* 18px – lead text */
+  --text-xl:      1.25rem;    /* 20px – card titles */
+  --text-2xl:     1.5rem;     /* 24px – sub-headings */
+  --text-3xl:     1.875rem;   /* 30px */
+  --text-4xl:     2.25rem;    /* 36px */
+  --text-5xl:     3rem;       /* 48px – section h2 */
+  --text-6xl:     3.75rem;    /* 60px – hero h1 */
   
   --shadow-soft: 0 10px 40px -10px rgba(0, 116, 183, 0.15);
   --shadow-medium: 0 20px 50px -10px rgba(0, 116, 183, 0.2);
@@ -26,7 +39,9 @@ html {
 body {
   background-color: var(--color-light);
   color: var(--color-textDark);
-  font-family: var(--font-sans);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -191,12 +206,13 @@ body {
 
 /* Typography */
 .section-title {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark);
   margin-bottom: 1rem;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 @media (min-width: 768px) {
@@ -206,10 +222,12 @@ body {
 }
 
 .section-subtitle {
-  font-size: 1.125rem;
-  color: rgb(75 85 99);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #64748b;
   margin-bottom: 2rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Glassmorphism */

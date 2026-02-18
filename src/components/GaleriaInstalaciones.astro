@@ -23,20 +23,26 @@ const instalaciones = [
 ];
 ---
 
-<section class="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-  <div class="container mx-auto px-4">
+<section class="galeria-section py-24 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <span class="text-primary font-bold text-sm uppercase tracking-wider mb-2 block">Instalaciones</span>
-      <h2 class="section-title">Nuestras Instalaciones</h2>
-      <p class="section-subtitle max-w-2xl mx-auto">
-        Espacios diseñados pensando en tu comodidad y equipados con tecnología de vanguardia
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full galeria-badge mb-5">
+        <span class="galeria-badge-dot"></span>
+        <span class="galeria-badge-text">Instalaciones</span>
+      </div>
+      <h2 class="galeria-title">
+        Nuestras <span class="galeria-gradient">Instalaciones</span>
+      </h2>
+      <p class="galeria-sub max-w-2xl mx-auto">
+        Espacios diseñados pensando en tu comodidad y equipados con tecnología de vanguardia.
       </p>
+      <div class="galeria-divider mx-auto mt-6"></div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
       {instalaciones.map((instalacion, index) => (
         <div 
-          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-80"
+          class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-80"
           style={`animation: fadeInUp 0.6s ease-out ${index * 0.1}s both`}
         >
           <img 
@@ -45,12 +51,14 @@ const instalaciones = [
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
             loading="lazy"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-            <h3 class="text-xl font-bold mb-2">{instalacion.titulo}</h3>
-            <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {instalacion.descripcion}
-            </p>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+            <div class="transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 class="galeria-card-title">{instalacion.titulo}</h3>
+              <p class="galeria-card-desc opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {instalacion.descripcion}
+              </p>
+            </div>
           </div>
         </div>
       ))}
@@ -59,14 +67,70 @@ const instalaciones = [
 </section>
 
 <style>
+  .galeria-section {
+    background: linear-gradient(to bottom, #f8fafc, #fff);
+  }
+  .galeria-badge {
+    background: rgba(0,116,183,0.07);
+    border: 1px solid rgba(0,116,183,0.15);
+    color: #0074B7;
+  }
+  .galeria-badge-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0074B7, #00A8E1);
+  }
+  .galeria-badge-text {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .galeria-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #003554;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+  .galeria-gradient {
+    background: linear-gradient(135deg, #0074B7 0%, #00A8E1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .galeria-sub {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #64748b;
+    line-height: 1.65;
+  }
+  .galeria-divider {
+    width: 56px; height: 4px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #0074B7, #00A8E1);
+  }
+  .galeria-card-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .galeria-card-desc {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.5;
+  }
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 </style>
