@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @theme {
   --color-primary: #0074B7;
@@ -26,10 +25,6 @@
   --shadow-soft: 0 10px 40px -10px rgba(0, 116, 183, 0.15);
   --shadow-medium: 0 20px 50px -10px rgba(0, 116, 183, 0.2);
   --shadow-strong: 0 25px 60px -15px rgba(0, 116, 183, 0.3);
-}
-
-* {
-  scroll-behavior: smooth;
 }
 
 html {

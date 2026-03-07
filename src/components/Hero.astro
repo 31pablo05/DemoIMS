@@ -17,58 +17,52 @@ interface Props {
 const { title, subtitle, cta, secondary, image, variant = 'primary' } = Astro.props;
 ---
 
-<section 
+<section
   class:list={[
-    'relative overflow-hidden py-20 md:py-32',
-    variant === 'primary' ? 'bg-gradient-to-br from-primary via-secondary to-accent' : 'bg-gradient-to-br from-dark to-secondary'
+    'relative overflow-hidden py-16 md:py-24',
+    variant === 'primary'
+      ? 'bg-gradient-to-br from-[#003554] via-[#0074B7] to-[#00A8E1]'
+      : 'bg-gradient-to-br from-[#001525] via-[#002d4a] to-[#004070]'
   ]}
 >
-  <!-- Background Pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-  </div>
+  <!-- Subtle grid pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-[0.045]"
+    style="background-image: linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px); background-size: 80px 80px;"
+  ></div>
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="text-white">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          {title}
-        </h1>
-        {subtitle && (
-          <p class="text-xl md:text-2xl mb-8 text-white/90">
-            {subtitle}
-          </p>
-        )}
-        <div class="flex flex-col sm:flex-row gap-4">
+  <!-- Decorative glow blobs -->
+  <div class="absolute -top-20 left-1/3 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-20 right-1/4 w-64 h-64 rounded-full bg-cyan-400/10 blur-3xl pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class:list={['max-w-3xl', image ? 'md:max-w-xl' : '']}>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4 tracking-tight">
+        {title}
+      </h1>
+      {subtitle && (
+        <p class="text-lg md:text-xl text-white/70 mb-8 leading-relaxed max-w-xl">
+          {subtitle}
+        </p>
+      )}
+      {(cta || secondary) && (
+        <div class="flex flex-col sm:flex-row gap-3">
           {cta && (
-            <a 
+            <a
               href={cta.href}
-              class="bg-white text-dark hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-xl hover:shadow-2xl text-center"
+              class="inline-flex items-center justify-center gap-2 bg-white text-[#003554] hover:bg-blue-50 font-bold py-3.5 px-7 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               {cta.text}
             </a>
           )}
           {secondary && (
-            <a 
+            <a
               href={secondary.href}
-              class="border-2 border-white text-white hover:bg-white hover:text-dark font-bold py-4 px-8 rounded-lg transition-all duration-300 text-center"
+              class="inline-flex items-center justify-center gap-2 border-2 border-white/35 text-white hover:bg-white/10 hover:border-white/55 font-semibold py-3.5 px-7 rounded-xl transition-all duration-300"
             >
               {secondary.text}
             </a>
           )}
-        </div>
-      </div>
-
-      {image && (
-        <div class="hidden md:block">
-          <div class="relative">
-            <div class="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-2xl transform rotate-3"></div>
-            <img 
-              src={image} 
-              alt={title}
-              class="relative rounded-2xl shadow-2xl w-full h-auto"
-            />
-          </div>
         </div>
       )}
     </div>

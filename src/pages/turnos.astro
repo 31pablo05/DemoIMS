@@ -139,21 +139,33 @@ import MapEmbed from '../components/MapEmbed.astro';
       
       <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <div class="card text-center bg-red-50">
-          <div class="text-4xl mb-3">🚨</div>
+          <div class="flex justify-center mb-3">
+            <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+          </div>
           <h3 class="font-bold text-dark mb-2">Guardia Médica</h3>
           <p class="text-2xl font-bold text-primary mb-1">24 horas</p>
           <p class="text-gray-600 text-sm">Todos los días</p>
         </div>
         
         <div class="card text-center">
-          <div class="text-4xl mb-3">📡</div>
+          <div class="flex justify-center mb-3">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            </div>
+          </div>
           <h3 class="font-bold text-dark mb-2">Radiología</h3>
           <p class="text-gray-700 text-sm mb-1">Lun a Vie: 8 a 20hs</p>
           <p class="text-gray-700 text-sm">Sáb: 9 a 12hs</p>
         </div>
         
         <div class="card text-center">
-          <div class="text-4xl mb-3">🔬</div>
+          <div class="flex justify-center mb-3">
+            <div class="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/><circle cx="15" cy="15" r="4" stroke-width="1.5"/></svg>
+            </div>
+          </div>
           <h3 class="font-bold text-dark mb-2">Ecografía</h3>
           <p class="text-gray-700 text-sm">Lun a Vie: 8 a 20hs</p>
           <p class="text-xs text-gray-500 mt-1">Con coordinación previa</p>

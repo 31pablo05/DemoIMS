@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface WhatsAppButtonProps {
   phone: string;
   message?: string;
@@ -13,8 +11,6 @@ export default function WhatsAppButton({
   text = 'Contactar por WhatsApp',
   className = ''
 }: WhatsAppButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-  
   const formattedPhone = phone.replace(/\D/g, '');
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/549${formattedPhone}?text=${encodedMessage}`;
@@ -24,12 +20,10 @@ export default function WhatsAppButton({
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group ${className}`}
     >
       <svg 
-        className={`w-6 h-6 transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}
+        className="w-6 h-6 transition-transform duration-300 group-hover:scale-110"
         fill="currentColor" 
         viewBox="0 0 24 24"
       >

@@ -26,7 +26,8 @@ const navItems = [
         />
         <div class="flex flex-col leading-none">
           <span class="brand-title text-sm sm:text-base font-extrabold tracking-tight">
-            Instituto Médico del Sur
+            <span class="brand-title-cyan">Instituto Médico</span>
+            <span class="brand-title-white"> del Sur</span>
           </span>
           <span class="brand-sub text-[10px] sm:text-xs font-medium tracking-widest uppercase hidden sm:block mt-0.5">
             Trelew · Chubut
@@ -55,7 +56,7 @@ const navItems = [
         ))}
 
         <!-- Divider -->
-        <div class="w-px h-6 bg-gray-200 mx-2"></div>
+        <div class="nav-divider"></div>
 
         <!-- Turno CTA -->
         <a
@@ -197,145 +198,168 @@ const navItems = [
 </script>
 
 <style>
+  /* ═══════════════════════════════════════════════════════════
+     PALETA DEL LOGO
+     Dark:    #010e23  (fondo logo)
+     Cyan:    #00CCE8  (texto "Instituto Médico")
+     Accent:  #0074B7  (azul medio)
+     White:   #ffffff  (texto "del Sur")
+  ═══════════════════════════════════════════════════════════ */
+
   /* ─── Accent bar ─────────────────────────────────────────── */
   .nav-accent-bar {
-    background: linear-gradient(90deg, #003554, #0074B7 40%, #00A8E1 70%, #0074B7);
-    background-size: 200% 100%;
-    animation: shimmer-bar 6s linear infinite;
+    background: linear-gradient(90deg,
+      #001429 0%,
+      #0074B7 25%,
+      #00CCE8 50%,
+      #0074B7 75%,
+      #001429 100%
+    );
+    background-size: 300% 100%;
+    animation: shimmer-bar 5s linear infinite;
   }
   @keyframes shimmer-bar {
-    0%   { background-position: 0% 0%; }
-    100% { background-position: 200% 0%; }
+    0%   { background-position: 100% 0%; }
+    100% { background-position: -100% 0%; }
   }
 
-  /* ─── Navbar glass ──────────────────────────────────────── */
+  /* ─── Navbar dark glass ──────────────────────────────────── */
   .navbar-glass {
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 116, 183, 0.10);
-    box-shadow: 0 4px 24px -4px rgba(0, 116, 183, 0.10), 0 1px 0 rgba(0, 116, 183, 0.06);
-    transition: box-shadow 0.3s ease;
+    background: rgba(1, 14, 35, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 204, 232, 0.12);
+    box-shadow:
+      0 4px 32px -4px rgba(0, 0, 0, 0.55),
+      0 1px 0 rgba(0, 204, 232, 0.08);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+  }
+  .navbar-glass.scrolled {
+    background: rgba(1, 10, 26, 0.99);
+    box-shadow:
+      0 8px 40px -4px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(0, 204, 232, 0.10),
+      0 2px 0 rgba(0, 204, 232, 0.06);
   }
 
   /* ─── Logo ───────────────────────────────────────────────── */
   .navbar-logo {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     object-fit: contain;
     flex-shrink: 0;
+    border-radius: 10px;
     animation: logo-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                filter 0.3s ease;
-    filter: drop-shadow(0 2px 8px rgba(0, 116, 183, 0.20));
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+    filter: drop-shadow(0 2px 10px rgba(0, 204, 232, 0.25));
   }
   a:hover .navbar-logo {
-    transform: scale(1.12) rotate(-4deg);
-    filter: drop-shadow(0 4px 14px rgba(0, 116, 183, 0.40));
+    transform: scale(1.1) rotate(-3deg);
+    filter: drop-shadow(0 4px 18px rgba(0, 204, 232, 0.50));
   }
   @keyframes logo-entrance {
-    from {
-      opacity: 0;
-      transform: scale(0.6) rotate(-15deg);
-      filter: drop-shadow(0 0 0 rgba(0,116,183,0));
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-      filter: drop-shadow(0 2px 8px rgba(0, 116, 183, 0.20));
-    }
+    from { opacity: 0; transform: scale(0.65) rotate(-12deg); }
+    to   { opacity: 1; transform: scale(1)    rotate(0deg);   }
   }
 
   /* ─── Brand text ─────────────────────────────────────────── */
-  .brand-title {
-    background: linear-gradient(135deg, #003554 0%, #0074B7 50%, #00A8E1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1.2;
+  .brand-title-cyan {
+    color: #00CCE8;
+  }
+  .brand-title-white {
+    color: #ffffff;
   }
   .brand-sub {
-    color: #94a3b8;
-    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.14em;
   }
 
   /* ─── Desktop nav links ──────────────────────────────────── */
   .nav-link {
-    color: #475569;
+    color: rgba(255, 255, 255, 0.60);
     position: relative;
   }
   .nav-link:hover {
-    color: #0074B7;
-    background: linear-gradient(135deg, rgba(0,116,183,0.07), rgba(0,168,225,0.07));
+    color: #ffffff;
+    background: rgba(0, 204, 232, 0.09);
   }
   .nav-link--active {
-    color: #0074B7 !important;
-    background: linear-gradient(135deg, rgba(0,116,183,0.10), rgba(0,168,225,0.10)) !important;
+    color: #00CCE8 !important;
+    background: rgba(0, 204, 232, 0.12) !important;
     font-weight: 700;
   }
   .active-dot {
     position: absolute;
-    bottom: 5px;
+    bottom: 4px;
     left: 50%;
     transform: translateX(-50%);
-    width: 18px;
-    height: 3px;
+    width: 20px;
+    height: 2.5px;
     border-radius: 99px;
-    background: linear-gradient(90deg, #0074B7, #00A8E1);
+    background: linear-gradient(90deg, #0074B7, #00CCE8);
+    box-shadow: 0 0 8px rgba(0, 204, 232, 0.60);
+  }
+
+  /* ─── Divider ────────────────────────────────────────────── */
+  .nav-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,0.10);
+    margin: 0 8px;
   }
 
   /* ─── CTA: Pedir Turno ───────────────────────────────────── */
   .cta-turno {
-    color: #0074B7;
-    background: rgba(0,116,183,0.08);
-    border: 1.5px solid rgba(0,116,183,0.20);
+    color: #00CCE8;
+    background: rgba(0, 204, 232, 0.08);
+    border: 1.5px solid rgba(0, 204, 232, 0.25);
   }
   .cta-turno:hover {
-    background: rgba(0,116,183,0.14);
-    border-color: rgba(0,116,183,0.35);
+    background: rgba(0, 204, 232, 0.15);
+    border-color: rgba(0, 204, 232, 0.50);
+    color: #fff;
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(0,116,183,0.18);
+    box-shadow: 0 4px 16px rgba(0, 204, 232, 0.20);
   }
 
   /* ─── CTA: Llamar ────────────────────────────────────────── */
   .cta-call {
-    color: #fff;
-    background: linear-gradient(135deg, #0074B7, #00A8E1);
-    box-shadow: 0 4px 14px rgba(0,116,183,0.30);
+    color: #010e23;
+    background: linear-gradient(135deg, #00CCE8 0%, #0074B7 100%);
+    box-shadow: 0 4px 18px rgba(0, 204, 232, 0.35);
   }
   .cta-call:hover {
-    background: linear-gradient(135deg, #005A8C, #0074B7);
+    background: linear-gradient(135deg, #19ddf5 0%, #0086cc 100%);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0,116,183,0.40);
+    box-shadow: 0 6px 24px rgba(0, 204, 232, 0.50);
   }
-  .cta-call:active {
-    transform: translateY(0);
-  }
+  .cta-call:active { transform: translateY(0); }
 
   /* ─── Mobile call chip ───────────────────────────────────── */
   .cta-call-mobile {
-    color: #0074B7;
-    background: rgba(0,116,183,0.08);
-    border: 1.5px solid rgba(0,116,183,0.18);
+    color: #00CCE8;
+    background: rgba(0, 204, 232, 0.08);
+    border: 1.5px solid rgba(0, 204, 232, 0.22);
   }
   .cta-call-mobile:hover {
-    background: rgba(0,116,183,0.14);
+    background: rgba(0, 204, 232, 0.16);
+    color: #fff;
   }
 
   /* ─── Hamburger button ───────────────────────────────────── */
   .hamburger-btn {
-    background: rgba(0,116,183,0.06);
-    border: 1.5px solid rgba(0,116,183,0.14);
+    background: rgba(0, 204, 232, 0.07);
+    border: 1.5px solid rgba(0, 204, 232, 0.18);
   }
   .hamburger-btn:hover {
-    background: rgba(0,116,183,0.12);
-    border-color: rgba(0,116,183,0.28);
+    background: rgba(0, 204, 232, 0.14);
+    border-color: rgba(0, 204, 232, 0.36);
   }
   .menu-bar {
     display: block;
     width: 100%;
     height: 2px;
-    background: #0074B7;
+    background: #00CCE8;
     border-radius: 99px;
     transition: transform 0.35s cubic-bezier(0.68,-0.55,0.27,1.55), opacity 0.2s ease;
     transform-origin: center;
@@ -352,74 +376,78 @@ const navItems = [
     transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
   }
   .mobile-drawer--open {
-    max-height: 600px;
+    max-height: 640px;
     opacity: 1;
   }
   .mobile-drawer-inner {
-    background: #fff;
-    border: 1px solid rgba(0,116,183,0.10);
-    box-shadow: 0 20px 50px -10px rgba(0,116,183,0.18), 0 4px 16px -4px rgba(0,0,0,0.06);
+    background: rgba(1, 18, 42, 0.99);
+    border: 1px solid rgba(0, 204, 232, 0.14);
+    box-shadow:
+      0 24px 56px -8px rgba(0, 0, 0, 0.70),
+      0 0 0 1px rgba(0, 204, 232, 0.06);
   }
 
   /* ─── Mobile nav items ───────────────────────────────────── */
   .mobile-nav-item {
-    color: #475569;
+    color: rgba(255, 255, 255, 0.58);
   }
   .mobile-nav-item:hover {
-    color: #0074B7;
-    background: rgba(0,116,183,0.05);
-    transform: translateX(3px);
+    color: #ffffff;
+    background: rgba(0, 204, 232, 0.07);
+    transform: translateX(4px);
   }
   .mobile-nav-item--active {
-    color: #0074B7 !important;
-    background: linear-gradient(135deg, rgba(0,116,183,0.08), rgba(0,168,225,0.08)) !important;
+    color: #00CCE8 !important;
+    background: rgba(0, 204, 232, 0.10) !important;
     font-weight: 700;
   }
   .mobile-nav-icon {
-    background: rgba(0,116,183,0.07);
-    color: #64748b;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45);
   }
   .mobile-nav-item:hover .mobile-nav-icon {
-    background: rgba(0,116,183,0.12);
-    color: #0074B7;
+    background: rgba(0, 204, 232, 0.14);
+    border-color: rgba(0, 204, 232, 0.30);
+    color: #00CCE8;
   }
   .mobile-nav-icon--active {
-    background: linear-gradient(135deg, #0074B7, #00A8E1) !important;
-    color: #fff !important;
+    background: linear-gradient(135deg, #0074B7, #00CCE8) !important;
+    border-color: transparent !important;
+    color: #010e23 !important;
+    box-shadow: 0 3px 10px rgba(0, 204, 232, 0.35);
   }
   .mobile-active-badge {
-    background: linear-gradient(135deg, rgba(0,116,183,0.12), rgba(0,168,225,0.12));
-    color: #0074B7;
+    background: rgba(0, 204, 232, 0.14);
+    border: 1px solid rgba(0, 204, 232, 0.28);
+    color: #00CCE8;
   }
 
   /* ─── Mobile CTA section ─────────────────────────────────── */
   .mobile-cta-section {
-    border-top: 1px solid rgba(0,116,183,0.08);
-    background: rgba(0,116,183,0.025);
+    border-top: 1px solid rgba(0, 204, 232, 0.10);
+    background: rgba(0, 204, 232, 0.03);
   }
   .cta-turno-mobile {
-    color: #0074B7;
-    background: rgba(0,116,183,0.08);
-    border: 1.5px solid rgba(0,116,183,0.18);
+    color: #00CCE8;
+    background: rgba(0, 204, 232, 0.08);
+    border: 1.5px solid rgba(0, 204, 232, 0.22);
   }
   .cta-turno-mobile:hover {
-    background: rgba(0,116,183,0.14);
+    background: rgba(0, 204, 232, 0.16);
+    color: #fff;
     transform: translateY(-1px);
   }
   .cta-call-bottom {
-    color: #fff;
-    background: linear-gradient(135deg, #0074B7, #00A8E1);
-    box-shadow: 0 4px 14px rgba(0,116,183,0.25);
+    color: #010e23;
+    background: linear-gradient(135deg, #00CCE8 0%, #0074B7 100%);
+    box-shadow: 0 4px 14px rgba(0, 204, 232, 0.30);
+    font-weight: 700;
   }
   .cta-call-bottom:hover {
-    background: linear-gradient(135deg, #005A8C, #0074B7);
+    background: linear-gradient(135deg, #19ddf5, #0086cc);
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,116,183,0.35);
-  }
-
-  /* ─── Scrolled shadow boost via JS class ────────────────── */
-  .navbar-glass.scrolled {
-    box-shadow: 0 8px 32px -4px rgba(0, 116, 183, 0.18), 0 2px 0 rgba(0, 116, 183, 0.06);
+    box-shadow: 0 6px 20px rgba(0, 204, 232, 0.45);
   }
 </style>
 

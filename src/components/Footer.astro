@@ -110,7 +110,6 @@ const currentYear = new Date().getFullYear();
     <!-- ── BOTTOM BAR ── -->
     <div class="ft-bottom">
       <p class="ft-copy">&copy; {currentYear} Instituto Médico del Sur. Todos los derechos reservados.</p>
-      <a href="/turnos" class="ft-turno-cta">Pedir turno</a>
     </div>
 
   </div><!-- /ft-inner -->
@@ -176,7 +175,6 @@ const currentYear = new Date().getFullYear();
     width: 38px;
     height: 38px;
     object-fit: contain;
-    filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(0,168,225,0.4));
     flex-shrink: 0;
   }
   .ft-brand-name {
@@ -398,26 +396,7 @@ const currentYear = new Date().getFullYear();
     font-size: 0.76rem;
     color: rgba(200,216,232,0.4);
   }
-  .ft-turno-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #fff;
-    background: linear-gradient(135deg, #0074B7, #00A8E1);
-    padding: 8px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: opacity 0.2s, transform 0.2s;
-    white-space: nowrap;
-  }
-  .ft-turno-cta:hover {
-    opacity: 0.88;
-    transform: translateY(-1px);
-  }
+
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -440,6 +419,6 @@ const currentYear = new Date().getFullYear();
       align-items: flex-start;
       gap: 12px;
     }
-    .ft-turno-cta { align-self: stretch; justify-content: center; }
+
   }
 </style>
