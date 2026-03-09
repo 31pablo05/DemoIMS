@@ -302,13 +302,15 @@ const navItems = [
   .logo-wrap {
     flex-shrink: 0;
     line-height: 0;
+    border-radius: 14px;
+    overflow: hidden;
     animation: logo-entrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-    filter: drop-shadow(0 2px 10px rgba(0, 116, 183, 0.20));
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 116, 183, 0.16);
   }
   .group:hover .logo-wrap {
     transform: scale(1.05);
-    filter: drop-shadow(0 3px 18px rgba(0, 116, 183, 0.38));
+    box-shadow: 0 4px 20px rgba(0, 116, 183, 0.30);
   }
   .navbar-logo {
     height: 62px;
